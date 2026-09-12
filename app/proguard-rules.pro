@@ -1,0 +1,2 @@
+-keep class com.netmonitor.app.** { *; }
+-dontwarn com.google.android.material.**

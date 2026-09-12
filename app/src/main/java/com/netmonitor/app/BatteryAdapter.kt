@@ -7,25 +7,30 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class BatteryAdapter(
-    private val items: List<BatteryUsage>
-) : RecyclerView.Adapter<BatteryAdapter.VH>() {
+    private val items: List<BatteryApp>
+) : RecyclerView.Adapter<BatteryAdapter.AppVH>() {
 
-    class VH(v: View) : RecyclerView.ViewHolder(v) {
-        val name: TextView = v.findViewById(R.id.appName)
-        val drain: TextView = v.findViewById(R.id.appDrain)
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AppVH {
         val v = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_battery_usage, parent, false)
-        return VH(v)
+            .inflate(R.layout.item_battery_app, parent, false)
+        return AppVH(v)
     }
 
-    override fun onBindViewHolder(holder: VH, position: Int) {
-        val item = items[position]
-        holder.name.text = item.name
-        holder.drain.text = item.drain
+    override fun onBindViewHolder(holder: AppVH, position: Int) {
+        holder.bind(items[position])
     }
 
     override fun getItemCount() = items.size
+
+    class AppVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val name = itemView.findViewById<TextView>(R.id.txtBatteryAppName)
+        private val percent = itemView.findViewById<TextView>(R.id.txtBatteryPercent)
+        private val drain = itemView.findViewById<TextView>(R.id.txtBatteryDrain)
+
+        fun bind(app: BatteryApp) {
+            name.text = app.name
+            percent.text = app.percent
+            drain.text = app.drainMa
+        }
+    }
 }

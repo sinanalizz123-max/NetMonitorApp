@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="#410200"/> <!-- weak -->
-    <item android:color="#1FD655"/> <!-- medium -->
-    <item android:color="#00072D"/> <!-- strong -->
+    <item android:color="@color/status_weak"/>
+    <item android:color="@color/status_normal"/>
+    <item android:color="@color/status_good"/>
 </selector>

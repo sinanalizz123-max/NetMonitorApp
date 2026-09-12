@@ -1,16 +1,16 @@
 <resources>
     <style name="Theme.NetMonitor" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/brand_green</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorSecondary">#516350</item>
-        <item name="colorTertiary">#00072D</item>
+        <item name="colorOnPrimary">#052E12</item>
+        <item name="colorSecondary">#BCCDBE</item>
+        <item name="colorTertiary">#A0CAFD</item>
         <item name="colorSurface">@color/bg</item>
         <item name="colorOnSurface">@color/text_primary</item>
-        <item name="colorSurfaceVariant">#E7E0EC</item>
+        <item name="colorSurfaceVariant">#49454F</item>
         <item name="colorOnSurfaceVariant">@color/text_secondary</item>
         <item name="colorOutline">@color/outline</item>
         <item name="colorError">@color/status_weak</item>
-        <item name="colorOnError">#FFFFFF</item>
+        <item name="colorOnError">#410200</item>
         <item name="android:colorBackground">@color/bg</item>
         <item name="android:statusBarColor">@color/bg</item>
         <item name="android:navigationBarColor">@color/bg</item>

@@ -1,35 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212">
+    android:padding="16dp">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="16dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/outline"
+            app:contentPadding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Battery Percentage -->
+                <TextView
+                    android:id="@+id/txtBatteryPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="78%"
+                    android:textAppearance="?attr/textAppearanceHeadlineLarge"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"/>
+
+                <TextView
+                    android:id="@+id/txtBatteryStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Charging • 1.2A"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/txtBatteryTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temp: —"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"/>
+
+                <TextView
+                    android:id="@+id/txtBatteryVoltage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Voltage: —"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Signal history strip -->
+        <LinearLayout
+            android:id="@+id/historyStrip"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:visibility="gone"
+            android:layout_marginBottom="20dp"/>
 
         <TextView
-            android:text="Battery"
-            android:textSize="18sp"
-            android:textColor="#EDEDED"
+            android:id="@+id/txtHistoryEmpty"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <include layout="@layout/item_battery_card"/>
-        <include layout="@layout/item_battery_card"/>
+            android:layout_height="wrap_content"
+            android:text="@string/history_empty"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="20dp"/>
 
         <TextView
-            android:text="Apps"
-            android:textColor="#B0B0B0"
-            android:layout_marginTop="20dp"
+            android:id="@+id/txtBatteryEmpty"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usage access not granted — grant access to see per-app drain."
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnGrantBatteryUsage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Grant usage access"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- App usage list -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerBatteryApps"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
-        <include layout="@layout/item_battery_app"/>
-        <include layout="@layout/item_battery_app"/>
-        <include layout="@layout/item_battery_app"/>
-
     </LinearLayout>
 </ScrollView>

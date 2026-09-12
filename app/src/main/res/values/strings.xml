@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NetMonitor</string>
+    <string name="desc_signal">Signal strength icon</string>
+    <string name="desc_trend_up">Signal trending up</string>
+    <string name="desc_trend_down">Signal trending down</string>
+    <string name="history_empty">No history yet</string>
+    <string name="billing_progress">Billing cycle usage progress</string>
+</resources>

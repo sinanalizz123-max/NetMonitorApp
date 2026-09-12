@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base -->
+    <color name="bg">#FCFCFC</color>
+    <color name="card_bg">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#1D1B20</color>
+    <color name="text_secondary">#49454F</color>
+
+    <!-- Brand -->
+    <color name="brand_green">#0B7A3E</color>
+    <color name="outline">#79747E</color>
+
+    <!-- Status (contrast-safe on light surfaces) -->
+    <color name="status_weak">#BA1A1A</color>
+    <color name="status_normal">#0B7A3E</color>
+    <color name="status_good">#0B57D0</color>
+    <color name="status_very_good">#5E35B1</color>
+
+</resources>

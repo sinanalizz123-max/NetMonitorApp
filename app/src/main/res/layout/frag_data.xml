@@ -1,38 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="8dp"/>
+
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:cardBackgroundColor="@color/card_bg"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/outline"
+        app:contentPadding="16dp">
 
-        <!-- Title -->
-        <TextView
-            android:text="Data usage"
-            android:textSize="18sp"
-            android:textColor="#EDEDED"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <!-- Summary -->
-        <include layout="@layout/item_data_usage"/>
-        <include layout="@layout/item_data_usage"/>
+            <TextView
+                android:id="@+id/txtTotalToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today: —"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"/>
 
-        <!-- App usage -->
-        <TextView
-            android:text="Apps"
-            android:textColor="#B0B0B0"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtCycleTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Billing cycle: —"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"/>
 
-        <include layout="@layout/item_data_app"/>
-        <include layout="@layout/item_data_app"/>
-        <include layout="@layout/item_data_app"/>
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/cycleProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                android:contentDescription="@string/billing_progress"
+                app:indicatorColor="@color/brand_green"
+                app:trackColor="@color/outline"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-    </LinearLayout>
-</ScrollView>
+    <TextView
+        android:id="@+id/txtEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usage access not granted — grant access to see per-app data."
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary"
+        android:visibility="gone"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnGrantUsage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="Grant usage access"
+        android:visibility="gone"
+        android:layout_marginBottom="12dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

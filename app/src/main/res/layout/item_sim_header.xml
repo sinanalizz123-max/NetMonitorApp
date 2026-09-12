@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="12dp">
+
+    <!-- Left: SIM · Carrier -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/txtSimName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIM 1"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" · "
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:alpha="0.6"/>
+
+        <TextView
+            android:id="@+id/txtCarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jio LTE"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:alpha="0.6"/>
+    </LinearLayout>
+
+    <!-- Right: Band MHz -->
+    <TextView
+        android:id="@+id/txtBand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2300+1800 MHz"
+        android:textSize="12sp"
+        android:textColor="@color/text_secondary"
+        android:alpha="0.6"/>
+
+</LinearLayout>

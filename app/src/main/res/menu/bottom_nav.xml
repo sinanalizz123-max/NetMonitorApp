@@ -2,23 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/dashboardFragment"
+        android:id="@+id/dashboard"
         android:title="Dashboard"
-        android:icon="@android:drawable/ic_menu_view"/>
+        android:icon="@drawable/ic_dashboard"/>
 
     <item
-        android:id="@+id/dataFragment"
+        android:id="@+id/data"
         android:title="Data"
-        android:icon="@android:drawable/ic_menu_manage"/>
+        android:icon="@drawable/ic_data"/>
 
     <item
-        android:id="@+id/batteryFragment"
+        android:id="@+id/battery"
         android:title="Battery"
-        android:icon="@android:drawable/ic_menu_compass"/>
+        android:icon="@drawable/ic_battery"/>
 
     <item
-        android:id="@+id/settingsFragment"
+        android:id="@+id/settings"
         android:title="Settings"
-        android:icon="@android:drawable/ic_menu_preferences"/>
+        android:icon="@drawable/ic_settings"/>
 
 </menu>

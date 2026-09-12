@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/CardRow"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="12dp">
 
     <TextView
-        android:text="App name"
-        android:textColor="#EDEDED"
+        android:id="@+id/txtBatteryAppName"
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_height="wrap_content"/>
+        android:text="YouTube"
+        android:textSize="14sp"
+        android:textColor="@color/text_primary"/>
 
-    <TextView
-        android:text="12%"
-        android:textColor="#FF4444"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/txtBatteryPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="32%"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"/>
+
+        <TextView
+            android:id="@+id/txtBatteryDrain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="420 mA"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"/>
+    </LinearLayout>
 
 </LinearLayout>

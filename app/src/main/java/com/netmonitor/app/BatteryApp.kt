@@ -1,7 +1,7 @@
 package com.netmonitor.app
 
-data class AppUsage(
+data class BatteryApp(
     val name: String,
     val percent: String,
-    val amount: String
+    val drainMa: String
 )
